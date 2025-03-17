@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "Personal CSS Vault",
+  "version": "1.0",
+  "description": "特定のサイトに保存可能なカスタムCSSを適用する拡張機能",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "images/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "128": "images/icon128.png"
+  }
+}
