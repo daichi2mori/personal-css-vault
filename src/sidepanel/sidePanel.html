@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>サイドパネル</title>
+  <link rel="stylesheet" href="sidePanel.css">
+</head>
+<body>
+  <div class="tab-container">
+    <div class="tab-buttons">
+      <button class="tab-button active" data-tab="editor">CSS エディタ</button>
+      <button class="tab-button" data-tab="sites">サイト管理</button>
+    </div>
+
+    <div id="editor-tab" class="tab-content active">
+      <div class="actions">
+        <div>
+          <span>現在のサイト: </span>
+          <span id="current-domain">未選択</span>
+        </div>
+        <div>
+          <button id="apply-btn">適用</button>
+          <button id="save-btn">保存</button>
+        </div>
+      </div>
+
+      <textarea id="css-editor" placeholder="ここにCSSを入力してください..."></textarea>
+
+      <div>
+        <input type="checkbox" id="auto-apply" />
+        <label for="auto-apply">このサイトに自動適用する</label>
+      </div>
+    </div>
+
+    <div id="sites-tab" class="tab-content">
+      <h3>保存済みのサイト</h3>
+      <div class="site-list" id="site-list"></div>
+      <div style="margin-top: 10px;">
+        <button id="delete-btn">選択したサイトを削除</button>
+        <button id="export-btn">設定をエクスポート</button>
+        <button id="import-btn">設定をインポート</button>
+        <input type="file" id="import-file" style="display: none;" accept=".json" />
+      </div>
+    </div>
+  </div>
+
+  <script src="sidePanel.ts"></script>
+</body>
+</html>
